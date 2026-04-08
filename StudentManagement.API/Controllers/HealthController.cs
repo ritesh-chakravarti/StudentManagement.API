@@ -5,13 +5,22 @@ namespace StudentManagement.API.Controllers
     [ApiController]
     public class HealthController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public HealthController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(new
             {
                 Status = "Healthy",
-                Message = "Student Management API is running successfully."
+                ApplicationName = _configuration["ApplicationSettings:ApplicationName"],
+                SupportEmail = _configuration["ApplicationSettings:SupportEmail"],
+                StudentPortalBaseUrl = _configuration["ExternalServices:StudentPortalBaseUrl"]
             });
         }
     }

@@ -6,12 +6,12 @@ namespace StudentManagement.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class StudentController : ControllerBase
     {
-        private readonly ILogger<StudentsController> _logger;
+        private readonly ILogger<StudentController> _logger;
         private readonly IStudentService _studentService;
 
-        public StudentsController(IStudentService studentService, Logger<StudentsController> logger)
+        public StudentController(IStudentService studentService, Logger<StudentController> logger)
         {
             _logger = logger;
             _studentService = studentService;

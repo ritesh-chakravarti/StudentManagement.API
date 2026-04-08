@@ -1,4 +1,6 @@
 <Solution>
-  <Project Path="StudentManagement.API.Tests/StudentManagement.API.Tests.csproj" Id="69832d31-1ad0-43bd-9a68-8a97a1fccbd1" />
+  <Project Path="StudentManagement.API.Tests/StudentManagement.API.Tests.csproj" Id="69832d31-1ad0-43bd-9a68-8a97a1fccbd1">
+    <Build Solution="Release|*" Project="false" />
+  </Project>
   <Project Path="StudentManagement.API/StudentManagement.API.csproj" />
 </Solution>

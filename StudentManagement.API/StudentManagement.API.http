@@ -1,0 +1,23 @@
+@StudentManagement.API_HostAddress = http://localhost:5293
+
+GET {{StudentManagement.API_HostAddress}}/Health/
+Accept: application/json
+
+
+GET {{StudentManagement.API_HostAddress}}/Students/
+Accept: application/json
+
+GET {{StudentManagement.API_HostAddress}}/Students/1
+Accept: application/json
+
+POST {{StudentManagement.API_HostAddress}}/Students/1
+Accept: application/json
+{
+  "Name": "Suman",
+  "Email": "suman@example.com",
+  "Course": "CI/CD with .NET"
+}
+
+
+
+###

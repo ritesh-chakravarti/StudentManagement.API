@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentManagement.API.Models;
 using StudentManagement.API.Services;
+
 namespace StudentManagement.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class StudentController : ControllerBase
     {
+        private readonly ILogger<StudentController> _logger;
         private readonly IStudentService _studentService;
 
-        public StudentsController(IStudentService studentService)
+        public StudentController(IStudentService studentService, Logger<StudentController> logger)
         {
+            _logger = logger;
             _studentService = studentService;
         }
 
@@ -24,10 +27,13 @@ namespace StudentManagement.API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
+            _logger.LogInformation("Fetching student with Id {Id}", id);
             var student = _studentService.GetById(id);
 
             if (student == null)
             {
+
+                _logger.LogWarning("Student with Id {Id} not found", id);
                 return NotFound($"Student with Id {id} not found.");
             }
 

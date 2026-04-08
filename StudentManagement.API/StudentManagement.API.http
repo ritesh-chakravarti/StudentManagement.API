@@ -10,7 +10,7 @@ Accept: application/json
 GET {{StudentManagement.API_HostAddress}}/Students/1
 Accept: application/json
 
-POST {{StudentManagement.API_HostAddress}}/Students/1
+POST {{StudentManagement.API_HostAddress}}/Students/
 Accept: application/json
 {
   "Name": "Suman",

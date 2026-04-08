@@ -48,7 +48,7 @@ jobs:
 
       # Step 6: Publish the API project
       - name: Publish Web API
-        run: dotnet publish StudentManagement/StudentManagement.API.csproj --configuration Release --output ./publish --no-build
+        run: dotnet publish StudentManagement.API/StudentManagement.API.csproj --configuration Release --output ./publish --no-build
 
       # Step 7: Store the publish output as an artifact
       - name: Upload publish artifact

@@ -20,7 +20,8 @@ namespace StudentManagement.API.Controllers
                 Status = "Healthy",
                 ApplicationName = _configuration["ApplicationSettings:ApplicationName"],
                 SupportEmail = _configuration["ApplicationSettings:SupportEmail"],
-                StudentPortalBaseUrl = _configuration["ExternalServices:StudentPortalBaseUrl"]
+                StudentPortalBaseUrl = _configuration["ExternalServices:StudentPortalBaseUrl"],
+                IsActive=true
             });
         }
     }
